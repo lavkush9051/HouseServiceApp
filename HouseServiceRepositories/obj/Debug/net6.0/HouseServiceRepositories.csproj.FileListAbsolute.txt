@@ -1,0 +1,14 @@
+D:\.NetTraining\HouseServiceAppSol\HouseServiceRepositories\bin\Debug\net6.0\HouseServiceRepositories.deps.json
+D:\.NetTraining\HouseServiceAppSol\HouseServiceRepositories\bin\Debug\net6.0\HouseServiceRepositories.runtimeconfig.json
+D:\.NetTraining\HouseServiceAppSol\HouseServiceRepositories\bin\Debug\net6.0\HouseServiceRepositories.dll
+D:\.NetTraining\HouseServiceAppSol\HouseServiceRepositories\bin\Debug\net6.0\HouseServiceRepositories.pdb
+D:\.NetTraining\HouseServiceAppSol\HouseServiceRepositories\obj\Debug\net6.0\HouseServiceRepositories.csproj.AssemblyReference.cache
+D:\.NetTraining\HouseServiceAppSol\HouseServiceRepositories\obj\Debug\net6.0\HouseServiceRepositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\.NetTraining\HouseServiceAppSol\HouseServiceRepositories\obj\Debug\net6.0\HouseServiceRepositories.AssemblyInfoInputs.cache
+D:\.NetTraining\HouseServiceAppSol\HouseServiceRepositories\obj\Debug\net6.0\HouseServiceRepositories.AssemblyInfo.cs
+D:\.NetTraining\HouseServiceAppSol\HouseServiceRepositories\obj\Debug\net6.0\HouseServiceRepositories.csproj.CoreCompileInputs.cache
+D:\.NetTraining\HouseServiceAppSol\HouseServiceRepositories\obj\Debug\net6.0\HouseServiceRepositories.dll
+D:\.NetTraining\HouseServiceAppSol\HouseServiceRepositories\obj\Debug\net6.0\refint\HouseServiceRepositories.dll
+D:\.NetTraining\HouseServiceAppSol\HouseServiceRepositories\obj\Debug\net6.0\HouseServiceRepositories.pdb
+D:\.NetTraining\HouseServiceAppSol\HouseServiceRepositories\obj\Debug\net6.0\HouseServiceRepositories.genruntimeconfig.cache
+D:\.NetTraining\HouseServiceAppSol\HouseServiceRepositories\obj\Debug\net6.0\ref\HouseServiceRepositories.dll
