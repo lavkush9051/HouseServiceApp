@@ -74,8 +74,6 @@ namespace HouseServiceRepositories
 
         public void UpdateCustomerDetails(short id, Customer newDetails)
         {
-            
-
             try
             {
                 Customer oldDetails = db.Customers.Find(id);
@@ -95,6 +93,34 @@ namespace HouseServiceRepositories
             {
                 throw;
             }
+        }
+
+        public string AddNewAppointment(CustomersRequest newAppointment)
+        {
+            try
+            {
+                if (newAppointment != null)
+                {
+                    db.CustomersRequests.Add(newAppointment);
+                    db.SaveChanges();
+                    ServicesList service = new ServicesList();
+                    service.CustomerId = newAppointment.CustomerId;
+                    service.OwnerId = newAppointment.OwnerId;
+                    db.ServicesLists.Add(service);
+                    db.SaveChanges();
+                    Console.WriteLine(newAppointment.AppointmentId);
+                    return newAppointment.AppointmentId.ToString(); 
+                }
+                else
+                {
+                    return "null value";
+                }
+         
+            }
+            catch
+            {
+                throw;
+            }            
         }
 
         

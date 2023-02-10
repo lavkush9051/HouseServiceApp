@@ -36,22 +36,22 @@ namespace HouseServiceApp.Controllers
 
 // Admin 
         [HttpGet]
-        [Route("getAdmin")]
+        [Route("/getAdmin")]
         public IActionResult Get(short id)
         {
             var res = _adminRepository.GetAdmin(id);
             return Ok(res);
         }
-// service list
+//***service list
         [HttpPost]
-        [Route("addNewService")]
+        [Route("/addNewService")]
         public IActionResult addNewService(ServicesTable newService)
         {
             _adminRepository.AddNewService(newService);
             return Ok(newService);
         }
 
-        //  ****** Customers
+//****** Customers
         [Authorize(Roles = "Administrator")]
         [HttpGet]
         [Route("getAllCustomers")]
@@ -60,6 +60,7 @@ namespace HouseServiceApp.Controllers
             var allCustomer = _customerRepository.GetCustomers();
             return Ok(allCustomer);
         }
+        [Authorize(Roles = "Administrator")]
         [HttpDelete]
         [Route("deleteCustomer")]
         public IActionResult deleteCustomer(short id)
@@ -69,6 +70,7 @@ namespace HouseServiceApp.Controllers
         }
 
 // ***** Owners
+        [Authorize(Roles = "Administrator")]
         [HttpGet]
         
         [Route("getAllOwner")]
@@ -77,6 +79,7 @@ namespace HouseServiceApp.Controllers
             var AllOwners = _ownerRepository.Getall();
             return Ok(AllOwners);
         }
+        [Authorize(Roles = "Administrator")]
         [HttpDelete]
         [Route("deleteOwner")]
         public IActionResult deleteOwner(short id)

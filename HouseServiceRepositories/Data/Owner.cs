@@ -15,6 +15,8 @@ namespace HouseServiceRepositories.Data
         public short? ServiceId { get; set; }
         public short? YearOfExp { get; set; }
         public short? CostToService { get; set; }
+        public string? OwnerEmailId { get; set; }   
+        public string? OwnerPassword { get; set; }  
 
         public virtual ServicesTable? Service { get; set; }
         public virtual ICollection<ServicesList> ServicesLists { get; set; }
