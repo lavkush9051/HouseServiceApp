@@ -23,9 +23,19 @@ namespace HouseServiceRepositories
  
         }
 
-        public List<Customer> GetCustomers()
+        public List<CustomerDTO> GetCustomers()
         {
-            return db.Customers.ToList();
+            //CustomerDTO customer = new CustomerDTO();
+            var cust = db.Customers.Select(x => new CustomerDTO
+            {
+                CustomerId = x.CustomerId,
+                CustomerName = x.CustomerName,
+                emailId = x.EmailId,
+                CustomerAddress = x.CustomerAddress,
+                Contact = (long)x.Contact,
+            }).ToList();
+            return cust;
+            //return db.Customers.ToList();
         }
         public Customer GetCustomer(short id)
         {
@@ -55,11 +65,17 @@ namespace HouseServiceRepositories
             //db.Customers.Remove(id);
             try
             {
-                Customer cust = db.Customers.Find(id);       
+                Customer cust = db.Customers.Find(id);     
+                //short custId = 
                 if(cust != null)
                 {
+                    //db.Customers.Remove(cust);
+                    //CustomersRequest custReq = db.CustomersRequests.Find(id);
+                    db.CustomersRequests.RemoveRange(db.CustomersRequests.Where(x => x.CustomerId == id));
+                    db.ServicesLists.RemoveRange(db.ServicesLists.Where(x => x.CustomerId == id));
+                    //db.CustomersRequests.Remove(custReq);
                     db.Customers.Remove(cust);
-                    db.SaveChanges();
+                    db.SaveChanges(); 
                 }
                 else
                 {

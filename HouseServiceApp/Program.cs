@@ -28,6 +28,16 @@ builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
 builder.Services.AddScoped<IAdminRepository, AdminRepository>();    
 //builder.Services.AddSingleton<ICustomerRequestRepository, CustomerRequestRepository>();
 
+builder.Services.AddCors(option =>
+{
+    option.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin();
+        builder.AllowAnyMethod();
+        builder.AllowAnyHeader();
+    });
+});
+
 builder.Services.AddControllers();
 
 //******jwt authotization
@@ -91,6 +101,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors();
 
 app.UseHttpsRedirection();
 

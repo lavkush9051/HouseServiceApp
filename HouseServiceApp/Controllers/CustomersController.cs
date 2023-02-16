@@ -30,7 +30,7 @@ namespace HouseServiceApp.Controllers
         }
 
         // get all Customer
-        [Authorize(Roles = "Administrator,Customer")]
+        //[Authorize(Roles = "Administrator,Customer")]
         [HttpGet]
         [Route("/getAllCustomers")]
         public IActionResult Get()
@@ -71,7 +71,7 @@ namespace HouseServiceApp.Controllers
         }
 
         // Get AllService for particular customer
-        [Authorize(Roles = "Customer")]
+        //[Authorize(Roles = "Customer")]
         [HttpGet]
         [Route("getCustomerServices/{id}")]
         public IActionResult Get(short id)
@@ -82,7 +82,7 @@ namespace HouseServiceApp.Controllers
             return Ok(task);
         }
         // Delete Customer
-        [Authorize(Roles = "Customer,Administrator")]
+        //[Authorize(Roles = "Customer,Administrator")]
         [HttpDelete]
         [Route("/deleteCustomer")]
         //public IActionResult Delete(short id, string name)

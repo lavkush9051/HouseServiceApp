@@ -10,7 +10,7 @@ namespace HouseServiceRepositories
 {
     public interface ICustomerRepository
     {
-            List<Customer> GetCustomers();
+            List<CustomerDTO> GetCustomers();
             Customer GetCustomer(short id);
             void PostCustomer(Customer newcust);
             void DeleteCustomer(short id);

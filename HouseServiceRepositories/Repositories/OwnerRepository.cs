@@ -64,6 +64,8 @@ namespace HouseServiceRepositories.Repositories
                 Owner owner = db.Owners.Find(ownerId);
                 if(owner != null)
                 {
+                    db.CustomersRequests.RemoveRange(db.CustomersRequests.Where((x) => x.OwnerId == ownerId));
+                    db.ServicesLists.RemoveRange(db.ServicesLists.Where((x) => x.OwnerId == ownerId));
                     db.Owners.Remove(owner);
                     db.SaveChanges();
                 }

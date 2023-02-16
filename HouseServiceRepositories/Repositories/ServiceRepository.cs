@@ -52,6 +52,7 @@ namespace HouseServiceRepositories.Repositories
                 var service = db.ServicesTables.Find(id);
                 if (service != null)
                 {
+                    //var owner = db.Owners.Update(db)
                     db.ServicesTables.Remove(service);
                     db.SaveChanges();
                 }

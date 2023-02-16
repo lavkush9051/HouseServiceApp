@@ -29,7 +29,7 @@ namespace HouseServiceApp.Controllers
 
         }
         // Get all owner
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         [HttpGet]
         [Route("GetAllOwner")]
         public IActionResult GetAll()
@@ -38,7 +38,7 @@ namespace HouseServiceApp.Controllers
             return Ok(ownerList);
         }
         // Get All request of a Owner 
-        [Authorize(Roles = "Owner")]
+        //[Authorize(Roles = "Owner")]
         [HttpGet]
         [Route("GetAllRequests")]
         public IActionResult GetAllRequests(short id)
@@ -47,7 +47,7 @@ namespace HouseServiceApp.Controllers
             return Ok(custReqList);
         }
         // Add New Owner
-        [Authorize(Roles = "Owner,Administrator")]
+        //[Authorize(Roles = "Owner,Administrator")]
         [HttpPost]
         [Route("/AddNewOwner")]
         public IActionResult Post(Owner newOwner)
@@ -56,7 +56,7 @@ namespace HouseServiceApp.Controllers
             return Ok(newOwner);
         }
         // Update Owner
-        [Authorize(Roles = "Owner")]
+        //[Authorize(Roles = "Owner")]
         [HttpPut]
         [Route("/UpdateOwner")]
         public IActionResult Put(short ownerId, Owner newDetails)
@@ -66,7 +66,7 @@ namespace HouseServiceApp.Controllers
         }
         // Delete Owner
 
-        [Authorize(Roles = "Owner, Administrator")]
+        //[Authorize(Roles = "Owner, Administrator")]
         [HttpDelete]
         [Route("/DeleteOwner")]
         public IActionResult Delete(short ownerId)

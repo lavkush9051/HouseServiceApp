@@ -52,6 +52,7 @@ namespace HouseServiceApp.Controllers
         }
 
 //****** Customers
+        // Get all Customer
         [Authorize(Roles = "Administrator")]
         [HttpGet]
         [Route("getAllCustomers")]
@@ -60,6 +61,7 @@ namespace HouseServiceApp.Controllers
             var allCustomer = _customerRepository.GetCustomers();
             return Ok(allCustomer);
         }
+        //Delete customer
         [Authorize(Roles = "Administrator")]
         [HttpDelete]
         [Route("deleteCustomer")]
@@ -70,15 +72,16 @@ namespace HouseServiceApp.Controllers
         }
 
 // ***** Owners
+        // Get all customers 
         [Authorize(Roles = "Administrator")]
         [HttpGet]
-        
         [Route("getAllOwner")]
         public IActionResult getAllOwner()
         {
             var AllOwners = _ownerRepository.Getall();
             return Ok(AllOwners);
         }
+        // Delete owner
         [Authorize(Roles = "Administrator")]
         [HttpDelete]
         [Route("deleteOwner")]
@@ -87,8 +90,13 @@ namespace HouseServiceApp.Controllers
             _ownerRepository.DeleteOwner(id);
             return Ok();
         }
-
-        // Toekn generate
+// ****** Service
+        // Delete service
+       /* public IActionResult deleteService(short id)
+        {
+            return Ok();
+        }*/
+        // Token generate
         [AllowAnonymous]
         [HttpPost]
         [Route("/Login")]
